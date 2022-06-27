@@ -29,6 +29,11 @@ router.post('/drones/create', (req, res, next) => {
 router.get('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
   // ... your code here
+  const {id} = req.params
+  Drone.findById(id)
+  .then((response) => {
+    res.render("/drones/update-form.hbs", { response });
+  })
 });
 
 router.post('/drones/:id/edit', (req, res, next) => {
@@ -37,8 +42,15 @@ router.post('/drones/:id/edit', (req, res, next) => {
 });
 
 router.post('/drones/:id/delete', (req, res, next) => {
-  // Iteration #5: Delete the drone
-  // ... your code here
+  console.log("Llego aquí desde formulario");
+  console.log(req.params);
+  Drone
+    .deleteOne({id:req.params.id})
+    .then(response=>{
+      console.log("Eliminado correctamente")
+      res.redirect("/drones")
+    })
+    .catch(e=>console.log(e))
 });
 
 module.exports = router;

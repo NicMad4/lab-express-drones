@@ -6,6 +6,11 @@
  <li>{{this.propellers}}</li>
  <li>{{this.maxSpeed}}</li>
     </ul>
+<a href="/drones/{{_id}}/edit">edit</a>
+
+<form action="/drones/:id/delete{{response.id}}" method="POST"> 
+    <button type="submit">delete drone</button>
+  </form>
  </li>
   
  
