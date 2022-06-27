@@ -1,1 +1,14 @@
 <h2>Available drones</h2>
+<ul>
+{{#each response}}
+ <li>{{this.name}}
+    <ul>
+ <li>{{this.propellers}}</li>
+ <li>{{this.maxSpeed}}</li>
+    </ul>
+ </li>
+  
+ 
+
+{{/each}}
+</ul>
