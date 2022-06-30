@@ -25,7 +25,7 @@ router.post('/drones/create', (req, res, next) => {
     .then(() => res.redirect('/drones'))
     .catch(error => res.redirect('/drones/create'));
 });
-
+//prueba
 router.get('/drones/:id/edit', (req, res, next) => {
   // Iteration #4: Update the drone
   // ... your code here
